@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreLocation
 
 struct Users {
     var id: Int
@@ -41,7 +42,7 @@ struct Address {
         suite = json["suite"].stringValue
         city = json["city"].stringValue
         zipcode = json["zipcode"].stringValue
-        self.geo = Geo(json: json["geo"])
+        self.geo = Geo(json: json["address","geo"])
     }
 }
 
