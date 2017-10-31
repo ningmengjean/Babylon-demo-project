@@ -12,12 +12,14 @@
 		72DE4F3E1F986EEB0098C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DE4F3C1F986EEB0098C705 /* Main.storyboard */; };
 		72DE4F401F986EEB0098C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DE4F3F1F986EEB0098C705 /* Assets.xcassets */; };
 		72DE4F431F986EEB0098C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DE4F411F986EEB0098C705 /* LaunchScreen.storyboard */; };
-		72DE4F4C1F986F940098C705 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F4A1F986F940098C705 /* PostTableViewController.swift */; };
 		72DE4F511F9870520098C705 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 72DE4F501F9870520098C705 /* Podfile */; };
 		72DE4F531F9873EE0098C705 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F521F9873EE0098C705 /* Post.swift */; };
 		72DE4F781FA5DD0D0098C705 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F771FA5DD0D0098C705 /* Users.swift */; };
 		72DE4F7A1FA708320098C705 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F791FA708320098C705 /* NetworkService.swift */; };
 		72DE4F7C1FA727BA0098C705 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F7B1FA727BA0098C705 /* Comments.swift */; };
+		72DE4F7F1FA7625F0098C705 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F7D1FA7625F0098C705 /* TitleViewController.swift */; };
+		72DE4F831FA764690098C705 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE4F811FA764690098C705 /* TitleTableViewCell.swift */; };
+		72DE4F841FA764690098C705 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DE4F821FA764690098C705 /* TitleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +29,14 @@
 		72DE4F3F1F986EEB0098C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72DE4F421F986EEB0098C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72DE4F441F986EEB0098C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72DE4F4A1F986F940098C705 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		72DE4F501F9870520098C705 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		72DE4F521F9873EE0098C705 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		72DE4F771FA5DD0D0098C705 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		72DE4F791FA708320098C705 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		72DE4F7B1FA727BA0098C705 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		72DE4F7D1FA7625F0098C705 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		72DE4F811FA764690098C705 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		72DE4F821FA764690098C705 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		86C8856CD9D43B9F35206ED2 /* Pods-Babylon demo project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Babylon demo project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Babylon demo project/Pods-Babylon demo project.release.xcconfig"; sourceTree = "<group>"; };
 		AFB886F5EEE65E3DFB386241 /* Pods_Babylon_demo_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Babylon_demo_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB8F5962E742EA18368CCDA /* Pods-Babylon demo project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Babylon demo project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Babylon demo project/Pods-Babylon demo project.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +89,9 @@
 				72DE4F761FA5D64C0098C705 /* Model */,
 				72DE4F381F986EEB0098C705 /* AppDelegate.swift */,
 				72DE4F3C1F986EEB0098C705 /* Main.storyboard */,
-				72DE4F4A1F986F940098C705 /* PostTableViewController.swift */,
+				72DE4F7D1FA7625F0098C705 /* TitleViewController.swift */,
+				72DE4F811FA764690098C705 /* TitleTableViewCell.swift */,
+				72DE4F821FA764690098C705 /* TitleTableViewCell.xib */,
 				72DE4F3F1F986EEB0098C705 /* Assets.xcassets */,
 				72DE4F411F986EEB0098C705 /* LaunchScreen.storyboard */,
 				72DE4F441F986EEB0098C705 /* Info.plist */,
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72DE4F841FA764690098C705 /* TitleTableViewCell.xib in Resources */,
 				72DE4F511F9870520098C705 /* Podfile in Resources */,
 				72DE4F431F986EEB0098C705 /* LaunchScreen.storyboard in Resources */,
 				72DE4F401F986EEB0098C705 /* Assets.xcassets in Resources */,
@@ -247,12 +254,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72DE4F831FA764690098C705 /* TitleTableViewCell.swift in Sources */,
 				72DE4F7A1FA708320098C705 /* NetworkService.swift in Sources */,
 				72DE4F781FA5DD0D0098C705 /* Users.swift in Sources */,
 				72DE4F391F986EEB0098C705 /* AppDelegate.swift in Sources */,
-				72DE4F4C1F986F940098C705 /* PostTableViewController.swift in Sources */,
 				72DE4F531F9873EE0098C705 /* Post.swift in Sources */,
 				72DE4F7C1FA727BA0098C705 /* Comments.swift in Sources */,
+				72DE4F7F1FA7625F0098C705 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
