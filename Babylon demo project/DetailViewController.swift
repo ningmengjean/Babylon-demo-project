@@ -98,10 +98,12 @@ class DetailViewController: UIViewController {
                     self.showNetworkError()
                 }
             case .success(let moyaResponse):
+//                let json = self.parseJSON(moyaResponse.data)
                 DispatchQueue.main.async {
                     self.comments = Array(self.parseJSON(moyaResponse.data).arrayValue.map {
                         Comments(json: $0)
                     })
+//                    self.comments = Comments(json: json)
                 }
             }
             
@@ -119,6 +121,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         let auther = usersResult[indexPath.row]
         let commentsNum = comments.count
         cell.configureDetailTableViewCell(auther, post!, commentsNum)
+        cell.organizationPlaceholderImageWithTitle()
         return cell
     }
 }
