@@ -11,6 +11,8 @@ import Moya
 
 enum NetworkService {
     case getTitleFromPost()
+    case getAutherWithUserId(userId: Int)
+    case getCommentsNumWithPostId(id: Int)
 }
 
 extension NetworkService: TargetType {
@@ -21,23 +23,29 @@ extension NetworkService: TargetType {
     var baseURL: URL {return URL(string:"http://jsonplaceholder.typicode.com")!}
     var path: String {
         switch self {
-        case .getTitleFromPost():
+        case .getTitleFromPost:
             return "/posts"
+        case .getAutherWithUserId(let id):
+            return "/users/\(id)"
+        case .getCommentsNumWithPostId(_):
+            return "/comments"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getTitleFromPost():
+        case .getTitleFromPost,.getAutherWithUserId, .getCommentsNumWithPostId:
             return .get
         }
     }
     var sampleData: Data {
-        return Data()
+       return Data()
     }
     var task: Task {
         switch self {
-        case .getTitleFromPost():
+        case .getTitleFromPost,.getAutherWithUserId:
             return .requestPlain
+        case let .getCommentsNumWithPostId(id: count):
+            return .requestParameters(parameters: ["postId": count], encoding: URLEncoding.queryString)
         }
     }
     var validate: Bool {

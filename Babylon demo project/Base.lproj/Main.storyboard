@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQx-eT-Qdz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UqZ-bE-gP6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,13 +35,93 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NCQ-uQ-iEH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WbQ-ri-FiH"/>
                     <connections>
                         <outlet property="titleTableView" destination="cis-MX-kvj" id="Z8h-PM-LKl"/>
+                        <segue destination="Y6x-Ah-IZe" kind="show" identifier="ToDetail" id="pUe-cP-J5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGc-at-glO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="226.23688155922042"/>
+            <point key="canvasLocation" x="556" y="226.23688155922042"/>
+        </scene>
+        <!--Detail Page-->
+        <scene sceneID="FOx-pW-Yaw">
+            <objects>
+                <viewController id="sce-2q-Ymb" customClass="DetailViewController" customModule="Babylon_demo_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GUr-GY-Xop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-tG-sS8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sce-2q-Ymb" id="BhP-Mx-tC2"/>
+                                    <outlet property="delegate" destination="sce-2q-Ymb" id="Jq5-Se-s8N"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0ff-tG-sS8" secondAttribute="trailing" id="1qY-TX-Wx7"/>
+                            <constraint firstItem="0ff-tG-sS8" firstAttribute="leading" secondItem="GUr-GY-Xop" secondAttribute="leading" id="2db-xQ-89K"/>
+                            <constraint firstItem="0ff-tG-sS8" firstAttribute="top" secondItem="GUr-GY-Xop" secondAttribute="top" id="5J0-xk-wBk"/>
+                            <constraint firstItem="0ff-tG-sS8" firstAttribute="bottom" secondItem="cvf-vW-Th9" secondAttribute="bottom" id="9KE-ZR-DFn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cvf-vW-Th9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail Page" id="Xbi-8I-hUh">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="SPQ-D9-az5"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="zEx-55-gXN">
+                            <connections>
+                                <action selector="dismissPage:" destination="sce-2q-Ymb" id="8q3-4P-Itz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTableView" destination="0ff-tG-sS8" id="LQB-r5-CoK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhE-Hz-NUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2208.8000000000002" y="224.4377811094453"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DBQ-KD-CxC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y6x-Ah-IZe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fGW-Ui-6Jc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sce-2q-Ymb" kind="relationship" relationship="rootViewController" id="2SP-T4-yns"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8de-lI-BsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432.8" y="225.33733133433284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NR7-PO-uy2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UqZ-bE-gP6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FMc-Tl-XFB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oQx-eT-Qdz" kind="relationship" relationship="rootViewController" id="Ybi-fl-Nd2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s65-qb-1IC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329" y="226"/>
         </scene>
     </scenes>
 </document>

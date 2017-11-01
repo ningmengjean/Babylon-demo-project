@@ -33,10 +33,13 @@ class TitleViewController: UIViewController {
         getTitleFromPost()
         
     }
-
+    var post: Post?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let post = sender as? Post, segue.identifier == "ToDetail" {
+            let nvc = segue.destination as! UINavigationController
+            let controller = nvc.visibleViewController as! DetailViewController
+            controller.post = post
+        }
     }
     
     func parseJSON(_ data: Data) -> JSON {
@@ -81,5 +84,10 @@ extension TitleViewController: UITableViewDelegate, UITableViewDataSource {
         let postTitle = postResult[indexPath.row]
         cell.configureTitleTableViewCell(postTitle)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = postResult[indexPath.row]
+        performSegue(withIdentifier: "ToDetail", sender: post)
     }
 }
