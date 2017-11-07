@@ -11,6 +11,8 @@ import UIKit
 class TitleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var autherNameImage: UIImageView!
+    @IBOutlet weak var autherNameLable: UILabel!
     
     func configureTitleTableViewCell(_ postResult: Post) {
        titleLable.text = postResult.title

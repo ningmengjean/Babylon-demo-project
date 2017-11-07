@@ -68,7 +68,7 @@ class TitleViewController: UIViewController {
                 }
             case .success(let moyaResponse):
                 DispatchQueue.main.async {
-                    self.postResult = Array(self.parseJSON(moyaResponse.data).arrayValue.map {Post(json: $0)})
+                    self.postResult = self.parseJSON(moyaResponse.data).arrayValue.map {Post(json: $0)}
                 }
             }
         }

@@ -98,15 +98,12 @@ class DetailViewController: UIViewController {
                     self.showNetworkError()
                 }
             case .success(let moyaResponse):
-//                let json = self.parseJSON(moyaResponse.data)
                 DispatchQueue.main.async {
-                    self.comments = Array(self.parseJSON(moyaResponse.data).arrayValue.map {
+                    self.comments = self.parseJSON(moyaResponse.data).arrayValue.map {
                         Comments(json: $0)
-                    })
-//                    self.comments = Comments(json: json)
+                    }
                 }
             }
-            
         }
     }
 }
